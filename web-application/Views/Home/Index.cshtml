@@ -1,0 +1,74 @@
+﻿@model DownloadModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div id="form">
+    <form action="/Export" method="post" id="form-wrapper" class="card shadow-sm rounded-sm p-4">
+        <h2 class="fs-6 mb-4">Export MarketPlace User</h2>
+        <div class="row fs-6">
+            <div class="col-sm-4 mb-3">
+                <div class="form-floating">
+                    <select class="form-select shadow-none" id="floatingSelectCity" name="city" aria-label="Floating label select example">
+                        <option value="">All</option>
+                        {@foreach (var city in Model.City)
+                        {
+                            <option value="@city">@city</option>
+                        }
+                        }
+                    </select>
+                    <label for="floatingSelect">City</label>
+                </div>
+
+            </div>
+            <div class="col-sm-4 mb-3">
+                <div class="form-floating">
+                    <select class="form-select shadow-none" id="State" name="state" aria-label="Floating label select example">
+                        <option value="">All</option>
+                        {@foreach (var city in Model.State)
+                        {
+                            <option value="@city">@city</option>
+                        }
+                        }
+                    </select>
+                    <label for="floatingSelect">State</label>
+                </div>
+
+            </div>
+            <div class="col-sm-4 mb-3">
+                <div class="form-floating">
+                    <select class="form-select shadow-none" id="Category" name="category" aria-label="Floating label select example">
+                        <option value="">All</option>
+                        {@foreach (var city in Model.Category)
+                        {
+                            <option value="@city">@city</option>
+                        }
+                        }
+                    </select>
+                    <label for="floatingSelect">Category</label>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end mt-4">
+            <button class="btn btn-dark shadow-none px-5 col-sm-6">Export</button>
+        </div>
+    </form>
+</div>
+
+
+
+<style>
+    #form {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #364958;
+        padding:15px;
+    }
+
+    #form-wrapper{
+        
+        background-color:#fff;
+    }
+</style>
